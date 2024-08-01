@@ -4,10 +4,13 @@ import { Button } from "~/components/ui/button";
 
 export default async function Home() {
   return (
-    <main className="flex min-h-[48.0rem] flex-col items-center justify-center bg-gradient-to-b from-slate-800 dark:from-slate-900">
+    <main className="flex min-h-[48.0rem] flex-col items-center justify-center">
       <section className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
         <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-          <span className="text-indigo-600">Healthcheck</span> Dashboard
+          <span className="text-slate-600 dark:text-slate-400">
+            Healthcheck
+          </span>{" "}
+          Dashboard
         </h1>
         <p className="text-center text-2xl font-light">
           An example dashboard to monitor the health of a service.
