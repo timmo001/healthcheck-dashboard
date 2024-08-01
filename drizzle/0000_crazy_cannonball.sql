@@ -4,8 +4,8 @@ CREATE TABLE IF NOT EXISTS "healthcheckdashboard"."healthcheck" (
 	"id" serial PRIMARY KEY NOT NULL,
 	"name" varchar(100) NOT NULL,
 	"description" varchar,
-	"value" varchar,
-	"threshold" varchar,
+	"value" numeric NOT NULL,
+	"threshold" numeric NOT NULL,
 	"created_at" timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
 	"updated_at" timestamp with time zone
 );

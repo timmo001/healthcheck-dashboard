@@ -1,5 +1,5 @@
 {
-  "id": "6e73e3a3-3568-47c5-a01e-ebdbe96cecbb",
+  "id": "b71a51cb-b3c8-4381-89de-4e565f7d7316",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -28,15 +28,15 @@
         },
         "value": {
           "name": "value",
-          "type": "varchar",
+          "type": "numeric",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "threshold": {
           "name": "threshold",
-          "type": "varchar",
+          "type": "numeric",
           "primaryKey": false,
-          "notNull": false
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",

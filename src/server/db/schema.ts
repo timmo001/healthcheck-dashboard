@@ -4,6 +4,7 @@
 import { sql } from "drizzle-orm";
 import {
   index,
+  numeric,
   pgSchema,
   serial,
   timestamp,
@@ -18,8 +19,8 @@ export const healthchecks = mySchema.table(
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 100 }).notNull(),
     description: varchar("description", {}),
-    value: varchar("value", {}),
-    threshold: varchar("threshold", {}),
+    value: numeric("value").notNull(),
+    threshold: numeric("threshold").notNull(),
     createdAt: timestamp("created_at", { withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),

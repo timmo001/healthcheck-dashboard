@@ -10,11 +10,13 @@ export default async function Healthcheck() {
     <main className="flex min-h-[48.0rem] flex-col items-center justify-center">
       <section className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
         {healthcheck.map((healthcheck) => (
-          <Card key={healthcheck.id}>
+          <Card
+            key={healthcheck.id}
+            className={`p-4 ${healthcheck.value >= healthcheck.threshold ? "bg-red-600 dark:bg-red-800" : "bg-slate-600 dark:bg-slate-800"}`}
+          >
             <h2 className="text-2xl font-bold">{healthcheck.name}</h2>
             <p>{healthcheck.description}</p>
             <p>{healthcheck.value}</p>
-            <p>{healthcheck.threshold}</p>
           </Card>
         ))}
       </section>
