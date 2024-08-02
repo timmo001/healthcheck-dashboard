@@ -7,16 +7,20 @@ export default async function Healthcheck() {
   void api.healthcheck.listHealthchecks.prefetch();
 
   return (
-    <main className="flex min-h-[48.0rem] flex-col items-center justify-center">
-      <section className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
+    <main className="flex min-h-[48.0rem] flex-col">
+      <section className="container grid grid-cols-2 items-center justify-center gap-12 px-4 py-16 lg:grid-cols-3 xl:grid-cols-4">
         {healthcheck.map((healthcheck) => (
           <Card
             key={healthcheck.id}
-            className={`p-4 ${healthcheck.value >= healthcheck.threshold ? "bg-red-600 dark:bg-red-800" : "bg-slate-600 dark:bg-slate-800"}`}
+            className={`${healthcheck.value >= healthcheck.threshold ? "bg-red-600 dark:bg-red-800" : "bg-slate-600 dark:bg-slate-800"}`}
           >
-            <h2 className="text-2xl font-bold">{healthcheck.name}</h2>
-            <p>{healthcheck.description}</p>
-            <p>{healthcheck.value}</p>
+            <div className="flex flex-row flex-wrap items-center gap-4 p-4 pe-6">
+              <div className="flex-1 flex-col gap-6">
+                <h2 className="text-2xl font-bold">{healthcheck.name}</h2>
+                <p className="text-md font-light">{healthcheck.description}</p>
+              </div>
+              <span className="text-xl font-medium">{healthcheck.value}</span>
+            </div>
           </Card>
         ))}
       </section>
